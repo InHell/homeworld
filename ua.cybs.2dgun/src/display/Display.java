@@ -1,7 +1,6 @@
 package display;
 
 import java.awt.Canvas;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -12,6 +11,8 @@ import java.awt.image.DataBufferInt;
 import java.util.Arrays;
 
 import javax.swing.JFrame;
+
+import Io.Input;
 
 public abstract class Display {
 
@@ -84,6 +85,11 @@ public abstract class Display {
 	}
 	public static void setTitle(String title){
 		window.setTitle(title);
+	}
+	
+	public static void addInputListener(Input inputListener)  {
+		window.add(inputListener);
+		
 	}
 	
 }
