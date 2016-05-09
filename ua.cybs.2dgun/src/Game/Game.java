@@ -6,6 +6,7 @@ import Io.Input;
 import Util.Time;
 import display.Display;
 import graphics.TextureAtlas;
+import level.Level;
 
 public class Game implements Runnable {
 
@@ -31,6 +32,7 @@ public class Game implements Runnable {
 	
 	private TextureAtlas atlas;
 	private Player   player;
+	private Level lvl;
 	
 
 	
@@ -47,7 +49,8 @@ public class Game implements Runnable {
 		input = new Input();
 	   Display.addInputListener(input);
 	   atlas = new TextureAtlas(ATLAS_FILE_NAME);
-       player = new Player(null, 300, 300, 1, 3, atlas);
+       player = new Player(null, 300, 300, 2, 3, atlas);
+       lvl = new Level(atlas);
 		
 		
 	}
@@ -81,12 +84,14 @@ public class Game implements Runnable {
 	private void update(){
 		
 	  player.update(input);
+	  lvl.update(); 
+	 
 		   		
 	}
 	
 	private void render(){
 		Display.clear();
-		
+		lvl.render(graphics);
 		player.render(graphics);
 				
 		Display.swapBuffers();
