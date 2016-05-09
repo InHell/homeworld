@@ -1,8 +1,6 @@
 package Game;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
 
 import Io.Input;
 import Util.Time;
@@ -32,16 +30,13 @@ public class Game implements Runnable {
 	private Input           input;
 	
 	private TextureAtlas atlas;
+	private Player   player;
+	
+
 	
 	
-	//tespsp
-	float x = 350;
-	float y = 250;
-	float delta = 0;
-	float radius = 50;
-	float speed = 3;
 	
-	// te e
+	
 	
 	
 //constructor GAME
@@ -52,6 +47,8 @@ public class Game implements Runnable {
 		input = new Input();
 	   Display.addInputListener(input);
 	   atlas = new TextureAtlas(ATLAS_FILE_NAME);
+       player = new Player(null, 300, 300, 1, 3, atlas);
+		
 		
 	}
 // START
@@ -83,31 +80,15 @@ public class Game implements Runnable {
 //UPDATE	
 	private void update(){
 		
-		if(input.getkey(KeyEvent.VK_UP))
-		y -= speed;
-		if(input.getkey(KeyEvent.VK_DOWN))
-			y += speed;
-		if(input.getkey(KeyEvent.VK_LEFT))
-			x -= speed;
-		if(input.getkey(KeyEvent.VK_RIGHT))
-			x += speed;
-	//	if(input.getkey(KeyEvent.VK_W))
-	//	    y  += speed * 3;
-	//	if(input.getkey(KeyEvent.VK_D))
-	//		x = 333;
-	//		y = 255;
-		   
-		
+	  player.update(input);
+		   		
 	}
 	
 	private void render(){
 		Display.clear();
 		
-		graphics.setColor(Color.WHITE);
-		graphics.drawImage(atlas.cut(0, 0, 32, 32), 300, 300, null);
-		
-	//	graphics.fillOval((int) (x + (Math.sin(delta) * 200)), (int) (y), (int) (radius * 2), (int) (radius * 2));
-		
+		player.render(graphics);
+				
 		Display.swapBuffers();
 	}
 	
