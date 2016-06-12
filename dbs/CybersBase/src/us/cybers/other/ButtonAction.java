@@ -14,7 +14,7 @@ public class ButtonAction implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 			
 		        Read.rd();
-		        Display.t1.setText(tex1 + tex1.valueOf(Read.BKS));
+		        Display.t1.setText(tex1 + String.valueOf(Read.BKS));
 		        
 				System.out.println(tex1 + Read.BKS);
 				
