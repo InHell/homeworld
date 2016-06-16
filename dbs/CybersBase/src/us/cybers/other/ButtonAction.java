@@ -9,50 +9,51 @@ import javax.swing.JOptionPane;
 public class ButtonAction implements ActionListener{
 	
 	
-	public static String tex1 = "Количество записей =   ";
+	
+	// public static String tex1 = "Количество записей =   ";
 	
 	public void actionPerformed(ActionEvent e) {
 			
 		        Read.rd();
-		        Display.t1.setText(tex1 + String.valueOf(Read.BKS));
+		//        Display.ta1.setText(String.valueOf(Read.id + Read.nf));
 		        
-				System.out.println(tex1 + Read.BKS);
+		//		System.out.println(tex1 + Read.id + Read.nf);
 				
-				
+	//	        JOptionPane.showMessageDialog(null, " Тут могла бы быть ваша реклама ");
 			
 		}
 		
 	
 	
-	public class Button2 implements ActionListener{
+	public static class Button2 implements ActionListener{
 
 		
-		public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent c) {
 			
 		
 		
-			JOptionPane.showMessageDialog(null, " Тут могла бы быть ваша реклама ");
+			Read.rd2();
 		}
 		
 	}
 	
-public class Button3 implements ActionListener{
+public static class Button3 implements ActionListener{
 
 		
 		public void actionPerformed(ActionEvent e) {
 			
+			Read.rd3();
 			
-			JOptionPane.showMessageDialog(null, " И Тут могла бы быть ваша реклама ");
 		}
 		
 	}
-public class Button4 implements ActionListener{
+public static class Button4 implements ActionListener{
 
 	
 	public void actionPerformed(ActionEvent e) {
 		
 		
-		JOptionPane.showMessageDialog(null, " ДА БЛИН!, ДАЖЕ Тут могла бы быть ваша реклама ");
+		Read.rd4();
 	}
 	
 }

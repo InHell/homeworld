@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="dbs/CybersBase/src"/>
+	<classpathentry kind="src" path="G01/src"/>
+	<classpathentry kind="src" path="ua.cybs.2dgun/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="dbs/CybersBase/bin"/>
+</classpath>
