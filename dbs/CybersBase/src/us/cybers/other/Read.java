@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import net.proteanit.sql.DbUtils;
 import ua.cybers.graph.Display;
 
 
@@ -45,26 +46,29 @@ public class Read {
 		
 	
 
-      
+
         try {
             Class.forName(driver).newInstance();
             conn = (Connection) DriverManager.getConnection(url, databaseUserName, databasePassword);
             stmt = (Statement) conn.createStatement();
             result = null;
       
-            result = ((java.sql.Statement) stmt).executeQuery("SELECT * FROM Filials ORDER BY NameOfFill");
+            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[3stCatPC], F.[4stCatPC] FROM Filials as F ORDER BY [4stCatPC]");
+
           
             Display.ta1.setText(null);
             
             while (result.next()) {
-       //       id=result.getString("ID");
-                nf = result.getString("NameOfFill");              
-         //   Display.ta1.setText(id+ "  " +nf+ "\n");   huinya tak toka 1 stroka ebawit
+            	
+            	
+        
+           pc=result.getString("NumberOfPC");
+               nf = result.getString("NameOfFill");
+   
+               fhc  = result.getString("4stCatPC");
                
-            Display.ta1.append( "  " +nf+ "\n");   // a vot tut zbs s klu4em \n ono menyaet stroku na next
-          //     Display.ta1.setText(ms1);
-                
-             // System.out.println(id+ " "+nf);
+           Display.ta1.append(nf+"| Всего пк "  +pc+"| Из них Четвертой: "+fhc+"\n");
+        
             }
           
             conn.close();
@@ -72,6 +76,7 @@ public class Read {
             e.printStackTrace();
         }
     }
+    
 	//action for b2
 	public static void rd2(){
 		
@@ -85,7 +90,7 @@ public class Read {
 	            stmt = (Statement) conn.createStatement();
 	            result = null;
 	      
-	            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[1stCatPC] FROM Filials as F ORDER BY  NameOfFill");
+	            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[1stCatPC] FROM Filials as F ORDER BY  [1stCatPC]");
 
 	          
 	            Display.ta1.setText(null);
@@ -119,7 +124,7 @@ public class Read {
             stmt = (Statement) conn.createStatement();
             result = null;
       
-            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[2stCatPC] FROM Filials as F ORDER BY  NameOfFill");
+            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[2stCatPC] FROM Filials as F ORDER BY  [2stCatPC]");
 
           
             Display.ta1.setText(null);
@@ -153,18 +158,18 @@ public static void rd4(){
             stmt = (Statement) conn.createStatement();
             result = null;
       
-            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[3stCatPC], F.[4stCatPC] FROM Filials as F ORDER BY  NameOfFill");
+            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[3stCatPC], F.[4stCatPC] FROM Filials as F ORDER BY [3stCatPC]");
 
           
             Display.ta1.setText(null);
             
             while (result.next()) {
-     //       pc=result.getString("NumberOfPC");
+            pc=result.getString("NumberOfPC");
                 nf = result.getString("NameOfFill");
                 thc  = result.getString("3stCatPC");
-                fhc  = result.getString("4stCatPC");
+       //         fhc  = result.getString("4stCatPC");
                
-            Display.ta1.append(nf+"| 3-й категории: " +thc+" | 4-й категории:  "+fhc+"\n");
+            Display.ta1.append(nf+" |  Всего пк  "  +pc+" |  Из них Третей :   "+thc+"\n");
           //     Display.ta1.setText(ms1);
                 
              // System.out.println(id+ " "+nf);
