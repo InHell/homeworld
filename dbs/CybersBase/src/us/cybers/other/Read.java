@@ -53,22 +53,24 @@ public class Read {
             stmt = (Statement) conn.createStatement();
             result = null;
       
-            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[3stCatPC], F.[4stCatPC] FROM Filials as F ORDER BY [4stCatPC]");
+            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill, F.NumberOfPC, F.[4stCatPC] FROM Filials as F ORDER BY IDE");
 
           
-            Display.ta1.setText(null);
+     //       Display.ta1.setText(null);
             
             while (result.next()) {
             	
             	
         
-           pc=result.getString("NumberOfPC");
-               nf = result.getString("NameOfFill");
+   //        pc=result.getString("NumberOfPC");
+  //             nf = result.getString("NameOfFill");
    
-               fhc  = result.getString("4stCatPC");
-               
-           Display.ta1.append(nf+"| Всего пк "  +pc+"| Из них Четвертой: "+fhc+"\n");
+ //              fhc  = result.getString("4stCatPC");
+ //              
+   //        Display.ta1.append(nf+"| Всего пк "  +pc+"| Из них Четвертой: "+fhc+"\n");
         
+            	   Display.tab1.clearSelection();
+            	   Display.tab1.setModel(DbUtils.resultSetToTableModel(result));
             }
           
             conn.close();
@@ -90,20 +92,19 @@ public class Read {
 	            stmt = (Statement) conn.createStatement();
 	            result = null;
 	      
-	            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[1stCatPC] FROM Filials as F ORDER BY  [1stCatPC]");
+	            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[1stCatPC] FROM Filials as F ORDER BY  IDE");
 
 	          
-	            Display.ta1.setText(null);
+	  //          Display.ta1.setText(null);
 	            
 	            while (result.next()) {
-	              pc=result.getString("NumberOfPC");
-	                nf = result.getString("NameOfFill");
-	                oc = result.getString("1stCatPC");
-	               
-	            Display.ta1.append(nf+" |  Всего пк  "  +pc+" |  Из них первой:   "+oc+"\n");
-	          //     Display.ta1.setText(ms1);
-	                
-	             // System.out.println(id+ " "+nf);
+	  //            pc=result.getString("NumberOfPC");
+	  //              nf = result.getString("NameOfFill");
+	 //               oc = result.getString("1stCatPC");
+	                Display.tab1.clearSelection();
+	  //          Display.ta1.append(nf+" |  Всего пк  "  +pc+" |  Из них первой:   "+oc+"\n");
+	            	Display.tab1.setModel(DbUtils.resultSetToTableModel(result));
+	      
 	            }
 	          
 	            conn.close();
@@ -124,20 +125,20 @@ public class Read {
             stmt = (Statement) conn.createStatement();
             result = null;
       
-            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[2stCatPC] FROM Filials as F ORDER BY  [2stCatPC]");
+            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[2stCatPC] FROM Filials as F ORDER BY  IDE");
 
           
-            Display.ta1.setText(null);
+     //       Display.ta1.setText(null);
             
             while (result.next()) {
-              pc=result.getString("NumberOfPC");
-                nf = result.getString("NameOfFill");
-                tc = result.getString("2stCatPC");
+  //            pc=result.getString("NumberOfPC");
+  //              nf = result.getString("NameOfFill");
+   //             tc = result.getString("2stCatPC");
                
-            Display.ta1.append(nf+" |  Всего пк  "  +pc+" |  Из них Второй:   "+tc+"\n");
-          //     Display.ta1.setText(ms1);
-                
-             // System.out.println(id+ " "+nf);
+   //         Display.ta1.append(nf+" |  Всего пк  "  +pc+" |  Из них Второй:   "+tc+"\n");
+            	 Display.tab1.clearSelection();
+            	 Display.tab1.setModel(DbUtils.resultSetToTableModel(result));
+         
             }
           
             conn.close();
@@ -158,21 +159,22 @@ public static void rd4(){
             stmt = (Statement) conn.createStatement();
             result = null;
       
-            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[3stCatPC], F.[4stCatPC] FROM Filials as F ORDER BY [3stCatPC]");
+            result = ((java.sql.Statement) stmt).executeQuery("SELECT F.NameOfFill,F.NumberOfPC, F.[3stCatPC] FROM Filials as F ORDER BY  IDE");
 
           
-            Display.ta1.setText(null);
+       //     Display.ta1.setText(null);
             
             while (result.next()) {
-            pc=result.getString("NumberOfPC");
-                nf = result.getString("NameOfFill");
-                thc  = result.getString("3stCatPC");
-       //         fhc  = result.getString("4stCatPC");
+      //      pc=result.getString("NumberOfPC");
+     //           nf = result.getString("NameOfFill");
+      //          thc  = result.getString("3stCatPC");
+    
                
-            Display.ta1.append(nf+" |  Всего пк  "  +pc+" |  Из них Третей :   "+thc+"\n");
-          //     Display.ta1.setText(ms1);
-                
-             // System.out.println(id+ " "+nf);
+      //      Display.ta1.append(nf+" |  Всего пк  "  +pc+" |  Из них Третей :   "+thc+"\n");
+            Display.tab1.clearSelection();
+        	 Display.tab1.setModel(DbUtils.resultSetToTableModel(result));
+            //   Display.tab1.setModel(DbUtils.resultSetToTableModel(result));
+          
             }
           
             conn.close();

@@ -19,14 +19,20 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.table.TableModel;
 
 import us.cybers.other.ButtonAction;
 import us.cybers.other.Read;
 
 public class Display extends JFrame{
 
-//	public  static JTable tab1;
-	
+
+
+
+
+	public static JTable tab1;
+	 
+    
 	
 	// fr1 JPN ===================================================================================
 	static Image img = new ImageIcon("res/zdr1.jpg").getImage();
@@ -39,7 +45,7 @@ public class Display extends JFrame{
 	static JButton b3 = new JButton(" 2 категория компов");
 	static JButton b4 = new JButton(" 3 категория компов");
 	
-	static JButton b5 = new JButton(" Сверх способности !!! ");
+	static JButton b5 = new JButton(" реклама ");
 	static JButton b6 = new JButton(" Добавить данные ");
 	
 	public static JTextField t1 = new JTextField(300);
@@ -48,6 +54,7 @@ public class Display extends JFrame{
 	public static JTextPane l1 = new JTextPane();
 	public static JTextPane l2 = new JTextPane();
 	public static JTextPane l3 = new JTextPane();
+	public static JTextPane l4 = new JTextPane();
 	
 	static int W1 = 300;
 	static int W2 = 300;
@@ -61,7 +68,7 @@ public class Display extends JFrame{
 	static Image f2img = new ImageIcon("res/zdr1.jpg").getImage();
 	
 	
-	static JButton f2b2 = new JButton(" да ну нахер");
+	static JButton f2b2 = new JButton("данунахер");
 	static JButton f2b3 = new JButton("нахер нахер");
 	static JButton f2b4 = new JButton("хочу назад");
 	
@@ -73,6 +80,7 @@ public class Display extends JFrame{
 	}
 	
 	public static void bf (){
+		
 		// frame window
      JFrame mw = new JFrame();	
         mw.setLocation(MAXIMIZED_BOTH, MAXIMIZED_VERT);
@@ -81,9 +89,9 @@ public class Display extends JFrame{
 	//	mw.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		mw.setSize(1300, 800);
 		mw.setLayout(null);
-		mw.setTitle(" cyborg incorporated/notcorporated programs ltd: " + "    |     " +  "    |    " + "Version 0.03.b");
+		mw.setTitle(" cyborg incorporated/notcorporated programs ltd: " + "    |     " +  "    |    " + "Version 1.27.c");
 		mw.setVisible(true);
-	    mw.setDefaultLookAndFeelDecorated(true);
+	//    mw.setDefaultLookAndFeelDecorated(true);
 	    mw.setIconImage(img);
 	    
 	    
@@ -110,16 +118,18 @@ public class Display extends JFrame{
 	    b4.setBounds(125, 450, 190, 40);
 	    p1.add(b5);
 	    b5.setBounds(1000, 250, 190, 40);
-	    p1.add(b6);
-	    b6.setBounds(1000, 350, 190, 40);
+	//  p1.add(b6);
+	//  b6.setBounds(1000, 350, 190, 40);
 	   
 	 // set some text string . nice
 	    p1.add(l1);
-	    l1.setText("                                               Информационное окно");
-	    l1.setBounds(500, 130, 450, 20);
+	    l1.setText("                                                                               Информационное окно");
+	    l1.setBounds(350, 130, 620, 20);
 	    l1.setEditable(false);
 	    l1.setBackground(Color.lightGray);
 	    l1.setForeground(Color.black);   
+	   
+	   
    
 	    p1.add(l2);
 	    l2.setText("                  Главное меню    ");
@@ -137,22 +147,27 @@ public class Display extends JFrame{
 	    l3.setFont(font);	    
 	    l3.setForeground(Color.cyan);
 	    
-	   p1.add(ta1);
-	    ta1.setBackground(Color.WHITE);
-	   ta1.setBounds(500, 150, 450, 540);
-	   ta1.setEditable(true);
-	    ta1.setFont(new Font("Dialog", Font.PLAIN, 14));
-        ta1.setTabSize(10);
-        ta1.setLineWrap(true);
+//	   p1.add(ta1);
+//	    ta1.setBackground(Color.WHITE);
+//	   ta1.setBounds(500, 150, 450, 540);
+//	   ta1.setEditable(true);
+//	    ta1.setFont(new Font("Dialog", Font.PLAIN, 14));
+ //       ta1.setTabSize(10);
+ //       ta1.setLineWrap(true);
+	   
+	  
+	     // Object[] columnsHeader = new String[] {"Филиал", "Всего ПК","Этой Категории"};
         
-   //     p1.add(tab1);
-	//    tab1.setBackground(Color.WHITE);
-	//    tab1.setBounds(500, 150, 450, 540);
-	//    tab1.setEditable(true);
-	//    tab1.setFont(new Font("Dialog", Font.PLAIN, 14));
-    //    tab1.setTabSize(10);
-   //     tab1.setLineWrap(true);
-      //  ta1.setWrapStyleWord(true);
+       tab1 = new JTable();
+		
+	    
+		p1.add(tab1);
+		tab1.setBounds(350,150,620, 450);
+		
+		
+		p1.revalidate();
+	//	mw.revalidate();
+		
 	           
         ButtonAction.Button4 a4 = new ButtonAction.Button4();
 	    b4.addActionListener(a4);
@@ -166,11 +181,14 @@ public class Display extends JFrame{
 	    ButtonAction a1 = new ButtonAction();
 	    b1.addActionListener(a1);
 	    
-	    ButtonAction.Button6 a6 = new ButtonAction.Button6();
-	    b6.addActionListener(a6);
+//   ButtonAction.Button6 a6 = new ButtonAction.Button6();
+//   b6.addActionListener(a6);
 	    
+	
+	
 	    mw.add(p1);
 	    mw.revalidate();
+	    
 	   // PANEL -2 ======================================================================================
 	    JPanel p2 = new JPanel();   
 	    p2.setSize(1300, 800);
