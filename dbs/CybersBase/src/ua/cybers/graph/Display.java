@@ -2,14 +2,10 @@ package ua.cybers.graph;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,10 +15,8 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
-import javax.swing.table.TableModel;
 
 import us.cybers.other.ButtonAction;
-import us.cybers.other.Read;
 
 public class Display extends JFrame{
 
@@ -35,10 +29,10 @@ public class Display extends JFrame{
     
 	
 	// fr1 JPN ===================================================================================
-	static Image img = new ImageIcon("res/zdr1.jpg").getImage();
+	static Image img = new ImageIcon("res/b2.png").getImage();
 	
 	
-	static JLabel ilb = new JLabel(new ImageIcon("res/zdr1.jpg"));
+	static JLabel ilb = new JLabel(new ImageIcon("res/zdr.jpg"));
 	
 	static JButton b1 = new JButton(" 4 категория - под снос ");
 	static JButton b2 = new JButton(" 1 категория компов");
@@ -60,7 +54,7 @@ public class Display extends JFrame{
 	static int W2 = 300;
 	//end fr1 Jpn ===================================================================================
 	
-	
+static  ImageIcon icon1 = new ImageIcon("res/b2.png");
 	
 	
 	// Frame JP2==============================================================================
@@ -68,9 +62,9 @@ public class Display extends JFrame{
 	static Image f2img = new ImageIcon("res/zdr1.jpg").getImage();
 	
 	
-	static JButton f2b2 = new JButton("данунахер");
-	static JButton f2b3 = new JButton("нахер нахер");
-	static JButton f2b4 = new JButton("хочу назад");
+	static JButton f2b2 = new JButton("кнопка не работает");
+	static JButton f2b3 = new JButton("и эта тоже");
+	static JButton f2b4 = new JButton("Главная");
 	
 	//end ==========================================================================================================
 	
@@ -86,14 +80,14 @@ public class Display extends JFrame{
         mw.setLocation(MAXIMIZED_BOTH, MAXIMIZED_VERT);
 		mw.setResizable(false);
 		mw.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	//	mw.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	
 		mw.setSize(1300, 800);
 		mw.setLayout(null);
 		mw.setTitle(" cyborg incorporated/notcorporated programs ltd: " + "    |     " +  "    |    " + "Version 1.27.c");
 		mw.setVisible(true);
-	//    mw.setDefaultLookAndFeelDecorated(true);
-	    mw.setIconImage(img);
-	    
+   
+	//  mw.setIconImage(img);
+	    mw.revalidate();
 	    
 	
 // main PANEL //	  ========================================================================================  
@@ -109,7 +103,9 @@ public class Display extends JFrame{
 			    
 		// buttons 
 	    p1.add(b1);
-	    b1.setBounds(125, 550, 190, 40);	   
+	    b1.setBounds(125, 550, 190, 40);	  
+	   
+	   
 	    p1.add(b2);
 	    b2.setBounds(125, 250, 190, 40);	    
 	    p1.add(b3);
@@ -147,16 +143,8 @@ public class Display extends JFrame{
 	    l3.setFont(font);	    
 	    l3.setForeground(Color.cyan);
 	    
-//	   p1.add(ta1);
-//	    ta1.setBackground(Color.WHITE);
-//	   ta1.setBounds(500, 150, 450, 540);
-//	   ta1.setEditable(true);
-//	    ta1.setFont(new Font("Dialog", Font.PLAIN, 14));
- //       ta1.setTabSize(10);
- //       ta1.setLineWrap(true);
-	   
+
 	  
-	     // Object[] columnsHeader = new String[] {"Филиал", "Всего ПК","Этой Категории"};
         
        tab1 = new JTable();
 		
@@ -166,7 +154,7 @@ public class Display extends JFrame{
 		
 		
 		p1.revalidate();
-	//	mw.revalidate();
+	
 		
 	           
         ButtonAction.Button4 a4 = new ButtonAction.Button4();
@@ -187,6 +175,7 @@ public class Display extends JFrame{
 	
 	
 	    mw.add(p1);
+	    mw.setIconImage(img);
 	    mw.revalidate();
 	    
 	   // PANEL -2 ======================================================================================
