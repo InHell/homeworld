@@ -11,3 +11,11 @@ public class s1 {
 	}
 }
 
+public class s300 {
+ public static void main(String args[]{
+ r.setVisible(true);
+ r.setSIze(300,150);
+
+}
+
+}
